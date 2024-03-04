@@ -11,7 +11,7 @@ Static dipsatch
 
 Dynamic dipsatch
     Used when the method may be changed in the later stage (function overriding)
-    So for reference types(class) dynamic dispatch is used since they do not support inheritence
+    So for reference types(class) dynamic dispatch is used since they support inheritence
     Also if a class is final it will use direct dispatch
     1. Table dispatch - uses a witness table for each class / subclass with address of each method
     2. Message dispatch

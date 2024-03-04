@@ -31,3 +31,15 @@ public var somePublicVariable = 0
 internal let someInternalConstant = 0
 fileprivate func someFilePrivateFunction() {}
 private func somePrivateFunction() {}
+
+class Test {
+    fileprivate let val = 10
+}
+
+Test().val
+
+class Another {
+    func test() {
+        print(Test().val)
+    }
+}

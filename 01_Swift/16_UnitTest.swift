@@ -1,29 +1,30 @@
 
-class MathOperations {
-    func add(_ a: Int, _ b: Int) -> Int {
-        return a + b
-    }
-}
-
 import XCTest
-// @testable import YourProject
 
-class YourProjectTests: XCTestCase {
-    func testAddition() {
-        let mathOperations = MathOperations()
-        let result = mathOperations.add(3, 4)
-        XCTAssertEqual(result, 7, "Adding 3 and 4 should equal 7")
+class TipCalculation {
+    func calculateTip(of enteredAmount: Double, with tip: Double) -> Double? {
+        guard enteredAmount >= 0 else {
+            return nil
+        }
+        let tipPercentage = tip / 100
+        return enteredAmount * tipPercentage
     }
 }
 
-import Foundation
+class TipCalculationTests: XCTestCase {
 
-// // Attempting to use sync on the main queue from the main thread can lead to a deadlock
-// DispatchQueue.main.sync {
-//     print("Attempting to execute a synchronous block on the main thread")
-// }
+    func testSuccessfulTipCalculation() {
+        
+        // Arrange 
+        let calculator = TipCalculation() 
+        let enteredAmount = 100.00
+        let tipSlider = 25.0
 
-DispatchQueue.main.async {
-    // Perform work on the main thread asynchronously
-    print("Executing asynchronously on the main thread")
+        // Act 
+        let tip = calculator.calculateTip(of: enteredAmount, with: tipSlider)
+
+        // Assert
+        XCAssertEqual(tip, 25)
+    }
+
 }

@@ -41,3 +41,13 @@ testDispatch()
 let a = (2, 4, 9, 0, 8)
 print(a)
 print(a)
+
+// // Attempting to use sync on the main queue from the main thread can lead to a deadlock
+// DispatchQueue.main.sync {
+//     print("Attempting to execute a synchronous block on the main thread")
+// }
+
+DispatchQueue.main.async {
+    // Perform work on the main thread asynchronously
+    print("Executing asynchronously on the main thread")
+}

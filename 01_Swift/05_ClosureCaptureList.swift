@@ -1,10 +1,10 @@
 
 
-// Closure list capture
+// Closure capture list
 
 var language: String = "Obj-C"
 
-// language will contain "Obj-C", it is captured, next time the clouse is called, it will still be "Obj-C".
+// language will contain "Obj-C", it is captured, next time the closure is called, it will still be "Obj-C".
 // Even if we update the value of language to "Swift" in line #13, it will still be "Obj-C"
 let code = { [language] in
     print(language)
@@ -14,7 +14,7 @@ language = "Swift"
 code() // prints "Obj-C" because value was captured
 code() // prints "Obj-C" because value was captured
 
-// to fix the above issue, just remove the closue capture list, everytime the language value will be read
+// to fix the above issue, just remove the closure capture list, everytime the language value will be read
 let code1 = {
     print(language) // prints "Swift"
 }

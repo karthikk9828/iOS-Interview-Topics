@@ -4,9 +4,13 @@
     AnyObject 
         is a protocol that represents an instance of any class type. 
         It is used when you want to work with values of any class type, including class instances and class types themselves.
+
+        var anyObjectArray: [AnyObject] = [UIButton(), UILabel(), UIView()]
     
     Any 
         is a protocol that represents an instance of any type, including class types, structure types, enumerations, and protocols.
+
+        var anyArray: [Any] = [5, "Hello", UIView(), true]
 
 
 */

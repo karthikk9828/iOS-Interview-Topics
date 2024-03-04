@@ -1,6 +1,6 @@
 
 class Company {
-    weak var employee: Employee?
+    var employee: Employee?
 
     deinit {
         print("Company deinitialized")
@@ -22,4 +22,4 @@ company!.employee = employee
 employee!.company = company
 
 employee = nil
-company = nil
+// company = nil

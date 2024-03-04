@@ -11,7 +11,7 @@ Associated Type
     when we want the protocol to not depend on any type
 
 Opaque Type
-    is used when we want to hide the type of the function that is being returned 
+    is used when we want to hide the type that is being returned 
     function returns something but the caller function is not aware of the type
     protocol type will be return from the function
 

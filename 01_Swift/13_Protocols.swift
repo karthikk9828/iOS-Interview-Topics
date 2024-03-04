@@ -16,3 +16,10 @@ extension Shape {
     var shape: String { return edges == 3 ? "Triangle" : "Quadrilateral"} 
 }
 
+// How to allow only classes conform to protocol?
+
+protocol ClassOnly : class {}
+
+class MyClass : ClassOnly {} // works
+
+struct MyStruct : ClassOnly {} // error
