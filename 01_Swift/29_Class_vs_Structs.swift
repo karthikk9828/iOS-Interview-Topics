@@ -8,6 +8,7 @@ import Foundation
        structs are value types, structs modifying one will not change the other.
     3. Class will have access deinit{} method which will be called when the object is destoyed, structs do not have access to deinit {}.
     4. Classes let us change properties of the instance even if the instance is a constant, struct will not allow this
+    5. Objective-C code can be written in classes but not in structs.
  */
 
 class Car {

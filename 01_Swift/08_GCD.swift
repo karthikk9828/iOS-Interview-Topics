@@ -23,14 +23,20 @@ Two types of Queue
 
        By default every app get one serial queue "main"
 
-    2. Concurrent queue
+       * main queue uses main thread
+       * main queue is the only queue with the access to the main thread, no other queue can access main thread
+       * UIKit is tied to main thread. So any update to the UI elements will be done through the runloop of the main thread (or) main runloop
+
+    2. Global Concurrent queue
        Tasks start in the same order, however task2 does not have to wait for task1 to complete
        This will happen fast but the result is unpredictable
 
+       * does not use main thread
        * Faster
        * Unpredictable order
 
        By default every app get four concurrent queues with various priorities
+       Priorities are decided by Quality of Service (QoS)
 
        Ex:
        * To save user preferences, we don't really care about the order

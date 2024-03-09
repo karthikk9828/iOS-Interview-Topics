@@ -28,6 +28,3 @@ class APIManager {
 }
 
 let API = APIManager() // error: we cannot create an instance of this class outside of the class if there is a private init
-
-var arr: [Int] = []
-print(arr.popLast())

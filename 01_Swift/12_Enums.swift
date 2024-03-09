@@ -30,3 +30,11 @@ enum Planet: Int {
 }
 
 print(Planet.earth.rawValue)
+
+// custom raww value
+
+enum WeekDay: Int {
+    case sun = 20, mon, tue, wed, thu, fri, sat
+}
+
+print(WeekDay.tue.rawValue)

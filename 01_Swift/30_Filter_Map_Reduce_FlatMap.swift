@@ -59,5 +59,5 @@ let arrayOfArrays: [[Int]] = [
     [7, 8, 9]
 ]
 
-let singleArray = arrayOfArrays.flatMap { $0 }
+let singleArray = arrayOfArrays.flatMap { $0 * 2 }
 print(singleArray)

@@ -13,6 +13,8 @@ let dataString = """
 }
 """
 
+// TODO: Add CodingKeys for custom field name
+
 struct Address: Codable {
     let city: String
     let country: String

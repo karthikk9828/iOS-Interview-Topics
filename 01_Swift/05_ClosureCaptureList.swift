@@ -21,6 +21,20 @@ let code1 = {
 
 code1()
 
+// --------------------------------------------------------------------
+
+// values in capture lists are immutable, we cannot change the value of captured variables inside closure
+
+var text = "hello" 
+let closure = { [text] in
+    text = "hello updated"
+    print(text)
+}
+
+closure()
+
+// --------------------------------------------------------------------
+
 class Capture {
 
     var name = "john"
