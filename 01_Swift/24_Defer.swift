@@ -34,3 +34,18 @@ let closure = {
 }
 
 closure()
+
+// --------------------------Example 3------------------------------------
+
+var value = 0
+
+func getValue() -> Int {
+    defer {
+        value = value + 1
+    }
+    return value // value will be 0 and returned, defer will be executed after return statement, just before transering the control out of the function
+}
+
+print(getValue()) // output: 0
+
+print(value) // output: 1

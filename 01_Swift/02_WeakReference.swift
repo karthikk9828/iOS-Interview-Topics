@@ -1,4 +1,12 @@
 
+/**
+    Difference between weak and unowned
+        weak - can be nil
+        unowned - cannot be nil
+
+        Check: 03_iOS_Core/01_RetainCycleDemo/RetainCycleDemo/HomeViewController.swift
+*/
+
 class Company {
     var employee: Employee?
 

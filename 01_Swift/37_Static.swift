@@ -20,3 +20,16 @@ MyClass2().update()
 
 print(MyClass1.count) // count is initialized when accessed here
 // print(MyClass2.count)
+
+// static properties cannot be overridden, use class properties
+
+class MyClass1 {
+    class var count: Int { 10 }
+}
+
+class MyClass2: MyClass1 {
+    override class var count: Int { 20 }
+}
+
+print(MyClass1.count) // count is initialized when accessed here
+print(MyClass2.count)

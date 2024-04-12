@@ -12,7 +12,8 @@
 
         var anyArray: [Any] = [5, "Hello", UIView(), true]
 
-
+    any
+        same as Any, determines the type at runtime, check example
 */
 
 var object: AnyObject
@@ -28,3 +29,23 @@ print(a)
 var b: any
 b = 2
 
+// -------------------------- any ------------------------------------
+
+protocol NetworkServicer {
+    func fetchUserName() -> String 
+}
+
+class ViewModel {
+    var userName: String?
+    private var service: any NetworkServicer
+
+    init(service: any NetworkServicer) {
+        self.service = service
+    }
+
+    func fetchData() {
+        Task {
+            userName = await service.fetchUserName()
+        }
+    }
+}

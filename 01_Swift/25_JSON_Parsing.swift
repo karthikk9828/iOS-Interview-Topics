@@ -38,3 +38,20 @@ do {
 } catch {
     print(error)
 }
+
+// ------------------------------- if the keys are different for each model, use init(from decoder: Decoder) -------------------------------
+
+let json = """
+{
+    {
+        "firstName": "James",
+        "lastName": "Anderson",
+        "PhoneNumber": "6274832845",
+    },
+    {
+        "name": "James",
+        "lastName": "Anderson",
+        "phoneNumber": "6274832845",
+    }
+} 
+"""

@@ -22,7 +22,7 @@ import Foundation
         If multiple threads are trying to access the critical section
             * All the threads will be added to a queue
             * We can set the no. of concurrent accessed / threads allowed at a time using a counter
-            * wait() will called when the thread execution starts, count will be incremented by 1
+            * wait() will be called when the thread execution starts, count will be incremented by 1
             * signal() method will called once the thread execution completes and increment the count by 1
             * If the count is non-negative integer, the thread will be allowed to access the resource
             * Repeat for all the threads in the queue created in step 1

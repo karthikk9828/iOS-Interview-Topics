@@ -2,15 +2,14 @@
 import Foundation
 
 /**
-    Swift actors are a new concurrency feature introduced in Swift 5.5 
+    Swift actors are a new concurrency feature introduced in Swift 5.5 (iOS 15) and later
     that provide a safe and efficient way to manage shared mutable state. 
     Actors are a type of object that can be accessed concurrently from multiple threads, 
     but ensure that access to their mutable state is serialized and thread-safe. 
 
     Note:
-        Actors do not support inheritence.
-        Properties and methods of actor can be accessed using `await` keyword.
-
+        * Actors do not support inheritence.
+        * Properties and methods of actor can be accessed using `await` keyword.
 */
 
 actor User {
@@ -30,3 +29,13 @@ let actor2 = User()
 
 print(await actor1.score)
 // await actor1.copyScore(from: actor2)
+
+struct Person {
+    var name: String
+    var age: Int
+}
+
+let john = Person(name: "John", age: 30)
+
+// Define a key path to the 'name' property of the Person struct
+let nameKeyPath = \Person.name

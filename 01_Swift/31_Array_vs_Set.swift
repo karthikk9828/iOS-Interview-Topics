@@ -9,7 +9,7 @@ import Foundation
 
     Ordered                                             Unordered (order is different everytime we access the set)
 
-    Lookup / search is O(N)                             Lookup is O(1), efficient for very larget input
+    Lookup / search is O(N)                             Lookup is O(1), efficient for very large input
 */
 
 // ---------------------- Set Operations ----------------------
