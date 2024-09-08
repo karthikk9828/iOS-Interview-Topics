@@ -38,6 +38,9 @@ let semaphore = DispatchSemaphore(value: 1)
 // Define a shared resource
 var sharedResource = 0
 
+// Create a DispatchGroup
+let group = DispatchGroup()
+
 // Function to access and modify the shared resource
 func modifySharedResource(with value: Int) {
     // Wait until semaphore is available
@@ -53,13 +56,16 @@ func modifySharedResource(with value: Int) {
 
 // Perform concurrent tasks that access the shared resource
 for i in 1...5 {
+    group.enter()
     DispatchQueue.global().async {
         modifySharedResource(with: i)
+        group.leave()
     }
 }
 
-// Wait for a few seconds to allow tasks to complete
-sleep(3)
+// Notify when all tasks are completed
+group.notify(queue: .main) {
+    // Print the final value of the shared resource
+    print("Final value of shared resource: \(sharedResource)")
+}
 
-// Print the final value of the shared resource
-print("Final value of shared resource: \(sharedResource)")

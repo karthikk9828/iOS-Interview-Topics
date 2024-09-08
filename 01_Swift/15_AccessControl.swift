@@ -43,3 +43,20 @@ class Another {
         print(Test().val)
     }
 }
+
+// Extensions can access private methods and properties if the extension are in the same file
+
+class ViewController {
+    private var value: Int = 10
+
+    private func myPrivateFunction() {
+
+    }
+}
+
+extension ViewController {
+    func setData() {
+        print(value)
+        myPrivateFunction()
+    }
+}

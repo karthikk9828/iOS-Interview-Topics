@@ -12,7 +12,7 @@ import UIKit
             2. NSInvocationOperation
                     - executes an invocation (a method defined by a target or a selector)
                     - It is only available in Objective-C
-            3. we can create our own custom sublasses
+            3. we can create our own custom subclasses
  
     States of an Operation
         isReady
@@ -40,7 +40,7 @@ import UIKit
         * we are not interested in the state of execution, we start the execution and forget about it
  
     Use Operations when
-        * we are interested in the state of execution, more functionalities for contolling the task
+        * we are interested in the state of execution, more functionalities for controlling the task
  
     Apple recommends to use Operations over GCD
 */

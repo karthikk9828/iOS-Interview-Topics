@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  02_ViewControllerLifeCycle
-//
-//  Created by K, Karthik | RIEPL on 22/01/24.
-//
-
 import UIKit
 
 @main

@@ -140,11 +140,14 @@ class Product3 {
 
 let product = Product3(name: "iPhone", price: 999.99)
 
+let dispatchGroup = DispatchGroup()
+
 // Simulate concurrent reads and writes
 for _ in 0..<20 {
+    dispatchGroup.enter()
     DispatchQueue.global().async {
         // Read the current price
-        let currentPrice = product.price
+        let currentPrice = product.getPrice()
 
         // Update the price with a new value
         let newPrice = currentPrice * 1.1
@@ -152,11 +155,13 @@ for _ in 0..<20 {
 
         // Print the updated price
         print("Updated price: \(newPrice)")
+        
+        dispatchGroup.leave()
     }
 }
 
 // Wait for all tasks to complete
-sleep(1)
+dispatchGroup.wait()
 
 // After the concurrent operations, print the final price
 print("Final price: \(product.price)")

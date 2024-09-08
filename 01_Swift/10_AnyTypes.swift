@@ -14,6 +14,9 @@
 
     any
         same as Any, determines the type at runtime, check example
+
+    Refer:
+        https://www.avanderlee.com/swift/anyobject-any/
 */
 
 var object: AnyObject
@@ -23,7 +26,11 @@ var value: Any
 value = 42
 value = "This is a string"
 
-let a = ["hello", 1.2, true, 10]
+class Test {
+    let a = 10
+}
+let test = Test()
+let a: [Any] = ["hello", 1.2, true, 10, test]
 print(a)
 
 var b: any

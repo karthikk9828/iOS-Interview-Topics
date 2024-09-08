@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='01_Publishers'/>
+        <page name='02_Types of Publishers and Subscribing'/>
+        <page name='03_Error handling and Completion'/>
+        <page name='04_Transformation Operators'/>
+        <page name='05_Filtering Operators'/>
+        <page name='06_Combining Operators'/>
+        <page name='07_Error handling Operators'/>
+        <page name='08_Subjects'/>
+        <page name='09_WeatherClientSubject'/>
+        <page name='10_NetworkRequest'/>
+        <page name='11_MultipleNetworkRequest'/>
+    </pages>
+</playground>

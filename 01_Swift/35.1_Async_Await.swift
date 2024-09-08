@@ -22,3 +22,44 @@ do {
 } catch {
     print(error)
 }
+
+// ------------------------- Serial API Calls ---------------------------------------
+
+func fetchFirstData() async throws -> String { "data1" }
+
+func fetchSecondData() async throws -> String { "data2" }
+
+func performSerialApiCalls() async {
+    do {
+        let firstData = try await fetchFirstData()
+        print("First data fetched: \(firstData)")
+        
+        let secondData = try await fetchSecondData()
+        print("Second data fetched: \(secondData)")
+    } catch {
+        print("Error: \(error)")
+    }
+}
+
+Task {
+    await performSerialApiCalls()
+}
+
+
+// ------------------------- Parellel API Calls ---------------------------------------
+
+func performConcurrentApiCalls() async {
+    async let firstData = await fetchFirstData()
+    async let secondData = await fetchSecondData()
+    
+    do {
+        let results = try await [firstData, secondData]
+        print("API call results: \(results)")
+    } catch {
+        print("Error: \(error)")
+    }
+}
+
+Task {
+    await performConcurrentApiCalls()
+}

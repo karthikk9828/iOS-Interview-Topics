@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  04_DispatchGroup
-//
-//  Created by K, Karthik | RIEPL on 06/03/24.
-//
-
 import UIKit
 
 @main

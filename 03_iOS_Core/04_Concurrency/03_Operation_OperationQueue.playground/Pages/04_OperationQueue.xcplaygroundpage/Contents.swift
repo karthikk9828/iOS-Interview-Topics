@@ -24,7 +24,7 @@ func testOperations() {
         print("operation2 finished executed")
     }
     
-    // operationQueue exectes operations on a different thread, not on main thread
+    // operationQueue executes operations on a different thread, not on main thread
     operationQueue.addOperation(operation1)
     operationQueue.addOperation(operation2)
 }

@@ -109,3 +109,29 @@ print(printNum(1))
 
 var a: (Int, Int, Int) = (1, 2, 3)
 print(a)
+
+//-------------------------- Capture Value Types --------------------------------------
+
+var name = "SpiderMan"
+
+let closureValType = { [name] in
+    print("name: \(name)")
+}
+
+name = "DeadPool" // will not be updated since captured value (name) is value type
+closureValType()
+
+//-------------------------- Capture Reference Types --------------------------------------
+
+class Test {
+    var num = 10
+}
+
+var test = Test()
+
+let closureRefType = { [test] in
+    print("test.num: \(test.num)")
+}
+
+test.num = 20 // will be updated since captured value (test) is reference type
+closureRefType()

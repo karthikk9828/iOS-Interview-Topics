@@ -49,6 +49,27 @@ let nilNumers: [Int?] = [1, nil, 7, 5, nil, 88, 67, 32, nil]
 let nonNilNumbers = nilNumers.compactMap { $0 }
 print(nonNilNumbers)
 
+let numStrings = ["1", "2", "hello", "3", "world"]
+let nums = numStrings.compactMap { Int($0) }
+print(nums)
+
+// custom compactMap implementation
+extension Collection {
+    func myCompactMap<T>(_ transform: (Element) -> T?) -> [T] {
+        var result = [T]() 
+
+        for value in self {
+            if let transformedVal = transform(value) {
+                result.append(transformedVal)
+            }
+        }
+
+        return result
+    }
+}
+
+print(["1", "2", "hello", "3", "world"].myCompactMap { Int($0) })
+
 // ----------------- Flat Map ----------------------
 
 // If we have an array of arrays, it flattens them into a single array
@@ -59,5 +80,5 @@ let arrayOfArrays: [[Int]] = [
     [7, 8, 9]
 ]
 
-let singleArray = arrayOfArrays.flatMap { $0 * 2 }
+let singleArray = arrayOfArrays.flatMap { $0.map { $0 * 2 } }
 print(singleArray)

@@ -21,7 +21,7 @@ MyClass2().update()
 print(MyClass1.count) // count is initialized when accessed here
 // print(MyClass2.count)
 
-// static properties cannot be overridden, use class properties
+// static properties and methods cannot be overridden, use class properties or methods
 
 class MyClass1 {
     class var count: Int { 10 }
@@ -33,3 +33,22 @@ class MyClass2: MyClass1 {
 
 print(MyClass1.count) // count is initialized when accessed here
 print(MyClass2.count)
+
+// ----------------------- Static funstions cannot be overridden, use class functions instead ------------------------------------------
+
+class MyClass3 {
+    static func myFunc() {
+        print("MyClass3 myFunc")
+    }
+}
+
+class MyClass4: MyClass3 {
+    override class var count: Int { 20 }
+
+    // error: cannot override static method
+    static func myFunc() {
+        print("MyClass4 myFunc")
+    }
+}
+
+MyClass1.myFunc()

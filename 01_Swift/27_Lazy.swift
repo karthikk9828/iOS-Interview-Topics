@@ -77,6 +77,8 @@ class APIManager {
     func call() {
         print("API called")
     }
+
+    private init() {} // private init makes sure that this class cannot be instatiated from outside of this class
 }
 
 print(APIManager.shared.call())

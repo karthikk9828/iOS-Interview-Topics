@@ -16,5 +16,7 @@
         <page name='13_DispatchBarrier'/>
         <page name='14_DispatchSemaphore'/>
         <page name='15_Download1000Images'/>
+        <page name='16_SequentialAPICalls'/>
+        <page name='17_ParellelAPICalls'/>
     </pages>
 </playground>
